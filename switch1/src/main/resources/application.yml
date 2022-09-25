@@ -1,0 +1,8 @@
+server:
+  port: 20000
+
+config:
+  phones:
+    123456: http://127.0.0.1:10000
+    123457: http://127.0.0.1:10001
+  messagePort: 21000

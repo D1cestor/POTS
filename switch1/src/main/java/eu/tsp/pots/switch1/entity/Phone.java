@@ -1,9 +1,10 @@
-package eu.tsp.pots.phone.entity;
+package eu.tsp.pots.switch1.entity;
+
 
 
 public class Phone extends Device
 {
-    public enum State{SILENT, BUSY, READY};
+    enum State{SILENT, BUSY, READY};
     private String number;
     private String gateway;
     private State state;

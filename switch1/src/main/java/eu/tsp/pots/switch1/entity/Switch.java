@@ -1,4 +1,4 @@
-package eu.tsp.pots.phone.entity;
+package eu.tsp.pots.switch1.entity;
 
 import org.springframework.stereotype.Component;
 
