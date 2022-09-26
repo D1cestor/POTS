@@ -4,7 +4,7 @@ import eu.tsp.pots.switch1.config.SwitchConfig;
 import eu.tsp.pots.switch1.entity.AskResponse;
 import eu.tsp.pots.switch1.entity.Request;
 import eu.tsp.pots.switch1.service.AskService;
-import lombok.var;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

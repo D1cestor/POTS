@@ -1,7 +1,7 @@
 package eu.tsp.pots.switch1.thread;
 
 import eu.tsp.pots.switch1.config.SwitchConfig;
-import lombok.var;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
