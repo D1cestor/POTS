@@ -53,6 +53,7 @@ public class DropServiceImpl implements DropService
                      System.out.println("table updates: " + request.getSource() + " -> " + dest +  " removed") ;
                      map.remove(request.getDestination());
                      System.out.println("table updates:" +  request.getDestination() + "-> " + sourceIp + " removed") ;
+                     //TODO : stop the thread
             }
         return res;
     }
