@@ -32,6 +32,7 @@ public class AskController
         response.setDestination(request.getSource());
         response.setResponse(ans);
         System.out.println("Get a call from " + request.getSource());
+        config.setState(Phone.State.BUSY);
         return response;
     }
 }
