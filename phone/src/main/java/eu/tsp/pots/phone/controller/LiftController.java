@@ -25,15 +25,16 @@ public class LiftController
     @RequestMapping(method = RequestMethod.GET)
     public void lift()
     {
+        if (config.getState() == Phone.State.READY) {
+            System.out.println("Error : Phone already lifted");
+        }
         if (config.getState() == Phone.State.SILENT){
             config.setState(Phone.State.READY);
-            System.out.println("Phone number " + config.getNumber() + "status : " + config.getState().toString());
+            System.out.println("Phone number " + config.getNumber() + " status : " + config.getState().toString());
         }
         if (config.getState() == Phone.State.BUSY)
         {
             System.out.println("Error : Phone not available");
-        } else if (config.getState() == Phone.State.READY) {
-            System.out.println("Error : Phone already lifted");
         }
 
     }

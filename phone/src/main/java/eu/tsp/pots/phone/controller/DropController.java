@@ -28,20 +28,24 @@ public class DropController
         this.dropService = dropService;
     }
 
-
+    /** calls drop service when POST request made at /drop
+     * @param target number of the phone in communication
+     */
     @RequestMapping(method = RequestMethod.POST)
     public void drop (@RequestBody String target)
     {
         dropService.drop(target);
     }
 
+    /**  Close the UDP connexion and put the phone status on SILENT.
+     */
     @RequestMapping(method = RequestMethod.GET)
     public DropResponse drop()
     {
         System.out.println("connexion with " + config.getNumber() + " closed");
         DropResponse response = new DropResponse();
         response.setResponse(true);
-        config.setState(Phone.State.READY);
+        config.setState(Phone.State.SILENT);
         return response;
     }
 }

@@ -1,0 +1,6 @@
+server:
+  port: 10002
+
+config:
+  number: 123458
+  switch1: http://127.0.0.1:20000
