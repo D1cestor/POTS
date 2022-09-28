@@ -39,14 +39,14 @@ public class DropServiceImpl implements DropService
         if (!flag) dest = config.getSwitches().get(0); // go to the default gateway
         request.setSourceIp("http://127.0.0.1:" + config.getPort());
         System.out.println("URI :  " + sourceIp);
-        DropResponse res = restTemplate.getForObject(dest + "/drop", DropResponse.class) ;
+        DropResponse resDEST = restTemplate.getForObject(dest + "/drop", DropResponse.class) ;
         DropResponse resSRC = restTemplate.getForObject( sourceIp + "/drop", DropResponse.class) ;
-        if (res == null  || resSRC == null  )
+        if (resDEST == null  || resSRC == null  )
         {
-            res = (DropResponse) request;
-            res.setResponse(false);
+            resDEST = (DropResponse) request;
+            resDEST.setResponse(false);
         }
-        if (res.getResponse() && resSRC.getResponse())
+        if (resDEST.getResponse() && resSRC.getResponse())
         {
          var map = config.getMap();
                      map.remove(request.getSource());
@@ -55,6 +55,6 @@ public class DropServiceImpl implements DropService
                      System.out.println("table updates:" +  request.getDestination() + "-> " + sourceIp + " removed") ;
                      //TODO : stop the thread
             }
-        return res;
+        return resDEST;
     }
 }

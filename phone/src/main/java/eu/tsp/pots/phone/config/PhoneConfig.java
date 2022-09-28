@@ -16,7 +16,7 @@ public class PhoneConfig
 {
     private String number;
     private String switch1;
-    private Phone.State state = Phone.State.READY;
+    private Phone.State state = Phone.State.SILENT;
     @Value("${server.port}")
     private int port;
 }

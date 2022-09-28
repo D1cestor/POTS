@@ -1,6 +1,7 @@
 package eu.tsp.pots.phone.controller;
 
 import eu.tsp.pots.phone.config.PhoneConfig;
+import eu.tsp.pots.phone.entity.Phone;
 import eu.tsp.pots.phone.entity.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,18 @@ public class LiftController
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public void lift (@RequestBody Request request)
+    public void lift()
     {
+        if (config.getState() == Phone.State.SILENT){
+            config.setState(Phone.State.READY);
+            System.out.println("Phone number " + config.getNumber() + "status : " + config.getState().toString());
+        }
+        if (config.getState() == Phone.State.BUSY)
+        {
+            System.out.println("Error : Phone not available");
+        } else if (config.getState() == Phone.State.READY) {
+            System.out.println("Error : Phone already lifted");
+        }
+
     }
 }
