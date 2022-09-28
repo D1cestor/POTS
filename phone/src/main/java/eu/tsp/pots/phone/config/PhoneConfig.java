@@ -16,6 +16,7 @@ public class PhoneConfig
 {
     private String number;
     private String switch1;
+    private int switchPort;
     private Phone.State state = Phone.State.READY;
     @Value("${server.port}")
     private int port;

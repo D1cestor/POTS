@@ -13,5 +13,7 @@ public class Request implements Serializable
 
     private String sourceIp;
 
+    private int sourcePort;
+
     private int id;
 }
